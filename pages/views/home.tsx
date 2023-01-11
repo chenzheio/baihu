@@ -9,7 +9,7 @@ const Home: NextPage<Props> = ({ message }) => {
     const greetName = message || 'Hi, there!';
 
     return (
-        <div>
+        <div className='flex w-screen h-screen justify-center items-center text-lime-800 text-lg'>
             <div>{greetName}</div>
         </div>
     );

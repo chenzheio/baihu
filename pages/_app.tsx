@@ -1,3 +1,4 @@
+import "../styles/globals.css";
 import { FC } from 'react';
 import type { AppProps /*, AppContext */ } from 'next/app';
 

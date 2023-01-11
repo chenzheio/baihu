@@ -25,64 +25,17 @@ const ErrorPage: NextPage<Props> = ({ error: title, statusCode, message, timesta
         <Head>
             <title>{title || "Error"}</title>
         </Head>
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
-        >
-            <div
-                style={{
-                    width: 460,
-                    maxWidth: "80vw",
-                    minWidth: 200,
-                    height: "100vh",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column"
-                }}
-            >
-                <div
-                    style={{
-                        display: "flex",
-                        alignItems: 'center',
-                        border: '1px solid #ccc',
-                        padding: 10,
-                        borderRadius: 5,
-                        boxShadow: '5px 5px 5px #ccc',
-                        marginBottom: 20
-                    }}
-                >
-                    <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>{statusCode}</span>
-                    <span style={{ marginLeft: 5, marginRight: 5, fontSize: '3rem', }}>|</span>
+        <div className="flex justify-center items-center h-screen w-screen bg-slate-300">
+            <div className="flex flex-col items-center border-1 border-gray-300 p-5 rounded-md shadow-md mb-5 bg-white">
+                <div className="border-1 border-gray-300 p-5 rounded-md shadow-md mb-5">
+                    <span className="text-xl font-bold">{statusCode}</span>
+                    <span className="text-xl font-bold mx-5">|</span>
                     <span>{message}</span>
-
                 </div>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        color: '#ccc',
-                    }}
-                >
+                <div className="flex flex-col text-gray-300">
                     <span>请求时间: {dayjs(timestamp).format("YYYY-MM-DD HH:mm:ss")}</span>
                     <span>请求路径: {path}</span>
                     <span>返回码: {statusCode}</span>
-
-                    <button
-                        style={{
-                            color: 'white',
-                            backgroundColor: 'black',
-                            padding: 5,
-                            borderRadius: 5,
-                            marginTop: 10
-                        }}
-                        onClick={() => router.back()}
-                    >
-                        返回
-                    </button>
                 </div>
             </div>
         </div>
